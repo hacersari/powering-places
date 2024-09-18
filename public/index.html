@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Uncomment if you want your page to NOT be indexed by search engines: -->
+  <!-- <meta name="robots" content="none"> -->
+  <link rel="stylesheet" href="style.css" />
+  <title>Exploring Energy Expenditures Across America</title>
+
+  <!-- Uncomment if using d3: -->
+  <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->
+
+  <!-- Uncomment if using Vega-Lite -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite-api@5.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-tooltip"></script> -->
+</head>
+
+<!------------------------------------------------------------>
+<!-- You are free to modify this template however you want! -->
+<!------------------------------------------------------------>
+
+<body>
+  <div class="container">
+    <header>
+      <h1><a href=".">Exploring Energy Consumptions Across America </a></h1>
+
+      <p>
+        <strong>Team Members</strong>: Anju Lam,Aynur Sari,Charyl Li,Masaru Chida
+      </p>
+    </header>
+
+    <section>
+
+      <p>
+        Welcome to our exploration of energy consumption patterns across the United States. Energy use is a fundamental
+        aspect of our daily lives, impacting our economy, environment, and individual households. Understanding these
+        patterns is crucial for making informed decisions about energy policies, conservation efforts, and our future
+        energy needs.
+      </p>
+
+
+
+
+
+    </section>
+
+
+
+    <section>
+
+      <!-- Red Map - Anju -->
+      <h2> Residential Electricity Consumption Heatmap by County in the U.S </h2>
+
+
+      <div id="observablehq-viewof-energy-f045ec0a"></div>
+      <div id="observablehq-viewof-scale-f045ec0a"></div>
+      <div id="observablehq-viewof-translate-f045ec0a"></div>
+      <div id="observablehq-redmap-f045ec0a"></div>
+
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+      <script type="module">
+        import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/2d53568dcc5ba136.js?v=4";
+        new Runtime().module(define, name => {
+          if (name === "viewof energy") return new Inspector(document.querySelector("#observablehq-viewof-energy-f045ec0a"));
+          if (name === "viewof scale") return new Inspector(document.querySelector("#observablehq-viewof-scale-f045ec0a"));
+          if (name === "viewof translate") return new Inspector(document.querySelector("#observablehq-viewof-translate-f045ec0a"));
+          if (name === "redmap") return new Inspector(document.querySelector("#observablehq-redmap-f045ec0a"));
+        });
+      </script>
+
+      <br>
+      <p>
+        First, we have a choropleth map that shows the chosen energy consumption by each county in the United States. We
+        included a drop down menu to choose between seven energy types, to see if there are any similarities or
+        differences in consumption across different energy types. Patterns we will to look into are which counties have
+        the highest natural gas consumption, and whether this also correlates to a high consumption in other energy
+        types
+        like diesel and gasoline. We will also look into patterns between residential, commercial, and industrial energy
+        consumption.
+      </p>
+
+      <p>
+        We also included a scale slider since the counties can get pretty small in a zoomed out screen, so you could
+        zoom
+        into see details about smaller counties.
+      </p>
+
+    </section>
+
+    <section>
+      <!-- Electric consumption rate - Anju-->
+      <h2> Comparing Electricity and Natural Gas Consumption & Expenditure</h2>
+
+      <div id="observablehq-price-63fdc2fd"></div>
+
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+      <script type="module">
+        import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/2d53568dcc5ba136@1004.js?v=4";
+        new Runtime().module(define, name => {
+          if (name === "price") return new Inspector(document.querySelector("#observablehq-price-63fdc2fd"));
+        });
+      </script>
+      <br>
+      <p>
+        Delving deeper, we compare electricity and natural gas consumption and expenditure through a pair of line
+        graphs. First, we can observe an obvious positive relationship between energy consumption and cost. A more
+        interesting observation though is that there is a much higher consumption of natural gas in the United States.
+        Although the units are different which makes it hard for a direct comparison, 1MWh of electricity consumption is
+        roughly equivalent to the energy content of 3.412 MCf of natural gas, so the observation still holds that we
+        generally consume more natural gas as an energy source. Another observation is that we generally spend less
+        money on natural gas than electricity. This could lead is to the fact that natural gas tends to be cheaper than
+        electricity for many applications, primarily due to differences in production, distribution, and efficiency
+        factors. In general, natural gas has lower production costs as it is cheaper to produce compared to electricity
+        that has to be generated from other sources such as coal or renewable sources. Additionally, natural gas
+        pipelines are widespread and well-established in many regions, allowing for efficient transportation and
+        distribution of gas to users (keeping the distribution costs relatively low).
+      </p>
+
+    </section>
+
+
+
+    <section>
+
+      <!-- White Map - Masaru -->
+      <h2> U.S. Residential Electricity Consumption by Per Capita Level </h2>
+
+
+      <div id="observablehq-viewof-selectedLevel-5223889c"></div>
+      <div id="observablehq-chart-5223889c"></div>
+
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+      <script type="module">
+        import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/2d53568dcc5ba136@764.js?v=4";
+        new Runtime().module(define, name => {
+          if (name === "viewof selectedLevel") return new Inspector(document.querySelector("#observablehq-viewof-selectedLevel-5223889c"));
+          if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-5223889c"));
+        });
+      </script>
+      <br>
+
+      <p> We also consider energy consumption on a per capita basis, which sheds light on individual consumption
+        behaviors and regional efficiency. By analyzing per capita consumption, we can identify which counties consume
+        more energy relative to their population, offering a nuanced understanding of energy efficiency and
+        sustainability across regions. </p>
+
+    </section>
+
+
+
+
+    <section>
+      <!-- Employement Tableau - Charly -->
+
+      <div class='tableauPlaceholder' id='viz1709168317608' style='position: relative'><noscript><a href='#'><img
+              alt='Dashboard 1 '
+              src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;44&#47;442_final_ghg&#47;Dashboard1&#47;1_rss.png'
+              style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='442_final_ghg&#47;Dashboard1' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image'
+            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;44&#47;442_final_ghg&#47;Dashboard1&#47;1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-US' />
+          <param name='filter' value='publish=yes' />
+        </object></div>
+      <script
+        type='text/javascript'>                    var divElement = document.getElementById('viz1709168317608'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1000px'; vizElement.style.height = '827px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1000px'; vizElement.style.height = '827px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '727px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      <br>
+      <p> Our exploration then extends to the employment landscape of the U.S. We present a map that colorfully
+        visualizes the average employment rates by state, offering a comparative overview of the nation's employment
+        scene. Understanding the relationship between employment rates and energy consumption is key. Areas with higher
+        employment may see increased energy use due to industrial and commercial activity. However, they may also have
+        more resources for investing in energy efficiency and renewable resources, potentially lowering the overall
+        energy footprint.
+
+      </p>
+    </section>
+
+
+    <section>
+
+      <!-- 3 graph Tableau - Charly -->
+      <h2> Population and Consumption Correlations </h2>
+
+      <div class='tableauPlaceholder' id='viz1710101652281' style='position: relative'><noscript><a href='#'><img
+              alt='Dashboard 3 '
+              src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;44&#47;442_final1&#47;Dashboard3&#47;1_rss.png'
+              style='border: none' /></a></noscript><object class='tableauViz' style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='442_final1&#47;Dashboard3' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image'
+            value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;44&#47;442_final1&#47;Dashboard3&#47;1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='en-US' />
+          <param name='filter' value='publish=yes' />
+        </object></div>
+      <script
+        type='text/javascript'>                    var divElement = document.getElementById('viz1710101652281'); var vizElement = divElement.getElementsByTagName('object')[0]; if (divElement.offsetWidth > 800) { vizElement.style.width = '1000px'; vizElement.style.height = '827px'; } else if (divElement.offsetWidth > 500) { vizElement.style.width = '1000px'; vizElement.style.height = '827px'; } else { vizElement.style.width = '100%'; vizElement.style.height = '927px'; } var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+      <br>
+      <p> We further examine the correlation between population size and residential energy consumption. Through scatter
+        plots, we explore whether larger populations lead to proportionally higher energy use or if there are
+        efficiencies of scale. These correlations can inform how we approach urban planning and energy management in
+        densely populated areas versus more rural settings.</p>
+    </section>
+
+    <section>
+
+      <!-- bar chart Anju -->
+      <h2> State-by-State Greenhouse Gas Emissions by Energy Source </h2>
+      <div id="observablehq-bar_chart-1e2d9f76"></div>
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+      <script type="module">
+        import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        import define from "https://api.observablehq.com/d/2d53568dcc5ba136@1150.js?v=4";
+        new Runtime().module(define, name => {
+          if (name === "bar_chart") return new Inspector(document.querySelector("#observablehq-bar_chart-1e2d9f76"));
+        });
+      </script>
+
+      <br>
+      <p>
+        In our project, we also took into account greenhouse gas emissions, which are closely intertwined with energy
+        production and consumption. This connection arises from the burning of fossil fuels, releasing carbon dioxide
+        and other greenhouse gases like methane and nitrous oxide into the atmosphere.
+
+        <br>
+        Displayed above is a visualization depicting greenhouse gas emissions across various states, categorized by the
+        energy sources responsible for these emissions. This visualization allows us to compare and analyze the states
+        with the highest greenhouse gas emissions. Additionally, we can delve deeper into individual states to examine
+        the distribution and proportion of energy sources contributing to these emissions.
+      </p>
+    </section>
+
+
+    <footer>
+      <p>
+        <a href="https://gitlab.cs.washington.edu/cse442/24wi/final-project/powering-places">Repository</a>
+        <br>
+        <a href="https://courses.cs.washington.edu/courses/cse442/23wi/">CSE 442 Data Visualization</a>
+        <br>
+        <a href="https://www.washington.edu">University of Washington</a>
+      </p>
+    </footer>
+
+    <script src="main.js"></script>
+  </div>
+
+</body>
+
+</html>
